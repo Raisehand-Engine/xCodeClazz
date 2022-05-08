@@ -9,11 +9,13 @@
 
   <meta name="author" content="Gourav Gupta">
   <meta name="keywords" content="Programming Class, Software Development, Learning">
-  <meta name="description" content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain" />
+  <meta name="description"
+    content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain" />
 
   <meta itemprop="name" content="Project">
   <meta itemprop="image" content="/assets/favicon.ico">
-  <meta itemprop="description" content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain">
+  <meta itemprop="description"
+    content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="xCodeClazz">
@@ -23,13 +25,14 @@
   <meta property="og:url" content="www.xcodeclazz.com">
   <meta property="og:title" content="xCodeClazz - Best Coding Class | Gamharia | Jamshedpur">
   <meta property="og:image" content="www.xcodeclazz.com/favicon.ico">
-  <meta property="og:description" content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain">
+  <meta property="og:description"
+    content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain">
   <meta property="og:site_name" content="xCodeClazz">
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
   <title>xCodeClazz - Best Coding Class | Gamharia | Jamshedpur</title>
 
@@ -41,6 +44,8 @@
         extend: {
           colors: {
             lightblue: '#F6F9FC', // stripe bg
+            logoColor: '#EAB308', // our brand logo color
+            buttonColor: '#000',
           }
         }
       }
@@ -49,11 +54,13 @@
 </head>
 
 <body>
-  <div class="h-screen overflow-y-auto overflow-x-hidden bg-lightblue">
-    <div class="w-full bg-white shadow shadow-sm h-14 sticky top-0">
+  <div class="h-screen overflow-y-auto overflow-x-hidden">
+    <div class="w-full bg-white z-10 shadow shadow-sm h-14 sticky top-0">
       <div class="flex overflow-hidden">
         <div class="flex-none flex-col self-center p-2">
-          <img src="/assets/logo192.png" alt="brand logo" width="32" height="32">
+          <a href="/">
+            <img src="/assets/logo192.png" alt="brand logo" width="32" height="32">
+          </a>
         </div>
         <p class="flex-auto h-14 flex flex-row justify-center items-center text-2xl font-extralight -ml-12">
           xCodeClazz
@@ -61,19 +68,135 @@
       </div>
     </div>
     <div class="p-5">
-      <h1 class="text-5xl">
-        Hi, <strong>Folks</strong>
-      </h1>
-      <p class="mt-5 p-1 text-2xl font-extralight">
-        Your probably wants to learn coding? great! In fact you should as soon as possible. You know what this is one of the most valuable skills now days. hmmm! what next.
-        Learn from us! we are the best at this if not great.
+
+      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+
+        <!-- first half -->
+        <div class="hidden sm:hidden md:hidden lg:flex flex-col justify-center items-center">
+          <img src="/assets/logo512.png" alt="brand logo" width="200" height="200">
+        </div>
+
+        <!-- second half -->
+        <div class="flex flex-col justify-center p-2 md:p-6 lg:p-10">
+
+          <h1 class="text-5xl">
+            Hi, Folks
+          </h1>
+          <p class="mt-2 text-2xl font-extralight leading-9 md:leading-loose">
+            You'r probably wants to learn coding? great! In fact you should as soon as possible. You know what this is
+            one
+            of the most valuable skills now days. hmmm! what next.
+            Learn from us! we are the best at this if not great.
+          </p>
+          <blockquote class="mt-10 leading-tight border-l-8 border-l-logoColor pl-4">
+            Gourav Gupta
+            <br />
+            <small class="text-slate-400">Founder, xCodeClazz</small>
+          </blockquote>
+
+          <div class="lg:w-3/4 mt-5 sm:mt-10 border p-5 sm:p-8 text-extralight text-purple-500 rounded-lg flex flex-row shadow-inner shadow-purple-500/20">
+            <p class="flex-initial w-3/4 leading-relaxed pr-5 sm:pr-10">
+              Talk to our expert counsellors to know the perfect path for you
+            </p>
+            <button
+              class="flex-initial w-1/4 border border-purple-500 self-center rounded-md p-2 text-xs font-semibold">
+              callback
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="mt-10 bg-gray-100 px-5 py-10 shadow-inner text-center flex flex-col space-y-5">
+      <h3 class="text-3xl font-extralight tracking-widest">OFFLINE COURSES</h3>
+      <p class="font-extralight text-sm">
+        The interactive learning for aspiring school/college students.
       </p>
-      <!--       
-        <p class="text-4xl font-light">
-          An offline class for bright students. we teach why & how programming works.
-        </p>
-        <button class="p-2 border rounded-sm shadow-md">Course</button> 
-      -->
+    </div>
+
+    <div class="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+      <!-- card starts -->
+      <div class="relative border rounded-md shadow-lg px-2 py-5 flex flex-col items-center space-y-5">
+        <div
+          class="bg-slate-100 absolute border px-3 py-1 top-2 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
+          <p>Batch May - August</p>
+        </div>
+        <div
+          class="flex flex-row items-center space-x-2 bg-slate-100 absolute border px-3 py-1 top-6 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
+          <p>2/8 Full</p>
+          <span class="flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+        </div>
+        <img src="/assets/cpp_icon.svg" alt="" height="150" width="150">
+        <h3 class="text-2xl font-light">Complete Core C++</h3>
+        <h4 class="font-light text-slate-500 text-4xl">₹3,000/-</h4>
+        <ul class="list-none list-inside text-center">
+          <li>3 Months</li>
+          <li>Seperate coding group</li>
+          <li>Weekly coding challenge</li>
+        </ul>
+        <button class="border px-4 py-2 bg-black text-white rounded-md">Request Callback</button>
+      </div>
+      <!-- card ends -->
+
+      <!-- card starts -->
+      <div class="relative border rounded-md shadow-lg px-2 py-5 flex flex-col items-center space-y-5">
+        <div
+          class="bg-slate-100 absolute border px-3 py-1 top-2 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
+          <p>Batch May - August</p>
+        </div>
+        <div
+          class="flex flex-row items-center space-x-2 bg-slate-100 absolute border px-3 py-1 top-6 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
+          <p>2/8 Full</p>
+          <span class="flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+        </div>
+        <img src="/assets/java-icon.svg" alt="" height="280" width="280">
+        <h3 class="text-2xl font-light">Complete Core Java</h3>
+        <h4 class="font-light text-slate-500 text-4xl">₹3,000/-</h4>
+        <ul class="list-none list-inside text-center">
+          <li>3 Months</li>
+          <li>Seperate coding group</li>
+          <li>Weekly coding challenge</li>
+        </ul>
+        <button class="border px-4 py-2 bg-black text-white rounded-md">Request Callback</button>
+      </div>
+      <!-- card ends -->
+
+      <!-- card starts -->
+      <div class="relative border rounded-md shadow-lg px-2 py-5 flex flex-col items-center space-y-5">
+        <div
+          class="bg-slate-100 absolute border px-3 py-1 top-2 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
+          <p>Batch May - August</p>
+        </div>
+        <div
+          class="flex flex-row items-center space-x-2 bg-slate-100 absolute border px-3 py-1 top-6 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
+          <p>2/8 Full</p>
+          <span class="flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+        </div>
+        <img src="/assets/python-icon.svg" alt="" height="150" width="150">
+        <h3 class="text-2xl font-light">Complete Core Python</h3>
+        <h4 class="font-light text-slate-500 text-4xl">₹3,000/-</h4>
+        <ul class="list-none list-inside text-center">
+          <li>3 Months</li>
+          <li>Seperate coding group</li>
+          <li>Weekly coding challenge</li>
+        </ul>
+        <button class="border px-4 py-2 bg-black text-white rounded-md">Request Callback</button>
+      </div>
+      <!-- card ends -->
+
     </div>
   </div>
 </body>
