@@ -51,6 +51,7 @@
       }
     }
   </script>
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
@@ -94,7 +95,8 @@
             <small class="text-slate-400">Founder, xCodeClazz</small>
           </blockquote>
 
-          <div class="lg:w-3/4 mt-8 sm:mt-10 border p-5 sm:p-8 text-extralight text-purple-500 rounded-lg flex flex-row shadow-inner shadow-purple-500/20">
+          <div
+            class="lg:w-3/4 mt-8 sm:mt-10 border p-5 sm:p-8 text-extralight text-purple-500 rounded-lg flex flex-row shadow-inner shadow-purple-500/20">
             <p class="flex-initial w-3/4 leading-relaxed pr-5 sm:pr-10">
               Talk to our expert counsellors to know the perfect path for you
             </p>
@@ -141,7 +143,7 @@
           <li>Seperate coding group</li>
           <li>Weekly coding challenge</li>
         </ul>
-        <button class="border px-4 py-2 bg-black text-white rounded-md">Request Callback</button>
+        <button class="border px-4 py-2 bg-black text-white rounded-md" id="myBtn">Request Callback</button>
       </div>
       <!-- card ends -->
 
@@ -198,7 +200,30 @@
       <!-- card ends -->
 
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content relative flex flex-col justify-center sm:w-1/4">
+        <span class="close absolute top-0 right-0 px-1 cursor-pointer">&times;</span>
+        <h3 class="text-2xl font-light">Your Details</h3>
+        <form action="#" class="flex flex-col justify-end">
+          <div class="w-full flex flex-col space-y-2 mt-4 mb-2">
+            <input class="rounded-sm font-semibold focus:border-black border-black" type="text" placeholder="Name">
+            <input class="rounded-sm font-semibold focus:border-black border-black" type="text"
+              placeholder="Phone Number">
+            <input class="rounded-sm font-semibold focus:border-black border-black" type="text"
+              placeholder="School/College">
+            <input class="rounded-sm font-semibold focus:border-black border-black" type="text"
+              placeholder="Class (Optional)">
+          </div>
+          <input type="submit" value="Request Callback" class="border-2 py-1 px-3">
+        </form>
+      </div>
+    </div>
   </div>
+
+  <script src="/js/model.js"></script>
 </body>
 
 </html>
