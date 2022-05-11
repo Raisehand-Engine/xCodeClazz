@@ -143,7 +143,8 @@
           <li>Seperate coding group</li>
           <li>Weekly coding challenge</li>
         </ul>
-        <button class="border px-4 py-2 bg-black text-white rounded-md" id="myBtn">Request Callback</button>
+        <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback('123456')">Request
+          Callback</button>
       </div>
       <!-- card ends -->
 
@@ -169,7 +170,8 @@
           <li>Seperate coding group</li>
           <li>Weekly coding challenge</li>
         </ul>
-        <button class="border px-4 py-2 bg-black text-white rounded-md">Request Callback</button>
+        <button class="border px-4 py-2 bg-black text-white rounded-md"
+          onclick="openRequestCallback('12345679879')">Request Callback</button>
       </div>
       <!-- card ends -->
 
@@ -195,30 +197,36 @@
           <li>Seperate coding group</li>
           <li>Weekly coding challenge</li>
         </ul>
-        <button class="border px-4 py-2 bg-black text-white rounded-md">Request Callback</button>
+        <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback('12')">Request
+          Callback</button>
       </div>
       <!-- card ends -->
 
     </div>
 
-    <!-- The Modal -->
     <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content relative flex flex-col justify-center sm:w-1/4">
-        <span class="close absolute top-0 right-0 px-1 cursor-pointer">&times;</span>
-        <h3 class="text-2xl font-light">Your Details</h3>
-        <form action="#" class="flex flex-col justify-end">
+      <div class="modal-content relative flex flex-col rounded-md justify-center sm:w-1/4">
+        <span class="close absolute top-0 right-0 p-2 cursor-pointer" onclick="closeModel()">&times;</span>
+        <h3 class="text-2xl font-bold text-center">We need your details</h3>
+        <div class="flex flex-col">
           <div class="w-full flex flex-col space-y-2 mt-4 mb-2">
-            <input class="rounded-sm font-semibold focus:border-black border-black" type="text" placeholder="Name">
-            <input class="rounded-sm font-semibold focus:border-black border-black" type="text"
-              placeholder="Phone Number">
-            <input class="rounded-sm font-semibold focus:border-black border-black" type="text"
-              placeholder="School/College">
-            <input class="rounded-sm font-semibold focus:border-black border-black" type="text"
-              placeholder="Class (Optional)">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Name">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Phone Number">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="School/College">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Class (Optional)">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Email (Optional)">
           </div>
-          <input type="submit" value="Request Callback" class="border-2 py-1 px-3">
-        </form>
+          <button type="button" class="border-2 p-3 flex justify-center space-x-2">
+            <svg class="animate-spin h-4 w-4 self-center" style="display: none;" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+              </path>
+            </svg>
+            <strong>Request Callback</strong>
+          </button>
+        </div>
       </div>
     </div>
   </div>
