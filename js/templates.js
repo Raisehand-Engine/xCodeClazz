@@ -17,7 +17,7 @@ function singleCourseDesign(course) {
             <ul class="list-none list-inside text-center">
                 ${course.features.map(e => `<li>${e}</li>`).join('')}
             </ul>
-            <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback(${course._id})">Request Callback</button>
+            <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback('course', ${course._id})">Request Callback</button>
         </div>
     `;
 }

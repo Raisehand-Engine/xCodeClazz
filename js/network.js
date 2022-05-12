@@ -19,33 +19,45 @@ const routes = {
     POST_COURSE_DELETE: `${host}/course/delete`,
 };
 
-// callbacks
-function createRequestCallback(o) {
-    console.log(o);
-    fetch(routes.POST_REQUEST_CALLBACK_CREATE, {
-        method: 'POST',
-        body: JSON.stringify({
-            courseId: '60be2160f6239b55f4d97151',
-            name: 'Gaurav Gupta',
-            phone: '9835718631',
-            school: 'KPS Gamharia'
-        })
-    })
-        .then(response => response.json())
-        .then(console.log);
-}
-
 function loadCourses() {
     // fetch(routes.GET_COURSES, {
     //     method: 'GET',
-    // })
-    //     .then(response => response.json())
-    //     .then((res) => {
-    //         const courses_container = document.getElementById('courses_container');
-    //         courses_container.innerHTML = courses.map(singleCourseDesign).join('');
-    //     });
-        const courses_container = document.getElementById('courses_container');
-        courses_container.innerHTML = courses.map(singleCourseDesign).join('');
+    // }).then(response => response.json()).then((res) => {
+    //     const courses_container = document.getElementById('courses_container');
+    //     courses_container.innerHTML = courses.map(singleCourseDesign).join('');
+    // });
+    const courses_container = document.getElementById('courses_container');
+    courses_container.innerHTML = courses.map(singleCourseDesign).join('');
+}
+
+function listenRequestCallbackButton() {
+    document.getElementById('request.callback.model.button').addEventListener('click', (e) => {
+        e.preventDefault();
+        const courseId = model_state.course.value;
+        const name = document.getElementById('user.name').value;
+        const phone = document.getElementById('user.phone').value;
+        const school = document.getElementById('user.school').value;
+
+        // prevent error here...
+        showModelLoadingSpinner();
+        fetch(routes.POST_REQUEST_CALLBACK_CREATE, {
+            method: 'POST',
+            body: JSON.stringify({
+                courseId: '60be2160f6239b55f4d97151', // courseId
+                name: name,
+                phone: phone,
+                school: school
+            })
+        }).then(response => response.json()).then(res => {
+            console.log(res);
+            setTimeout(() => {
+                hideModelLoadingSpinner();
+                resetModelState();
+                closeModel();
+            }, 5000);
+        });
+    });
 }
 
 loadCourses();
+listenRequestCallbackButton();

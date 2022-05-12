@@ -102,7 +102,7 @@
             </p>
             <button
               class="flex-initial w-1/4 border border-purple-500 self-center rounded-md p-2 text-xs font-semibold">
-              callback
+              Callback
             </button>
           </div>
 
@@ -130,14 +130,12 @@
         <h3 class="text-2xl font-bold text-center">We need your details</h3>
         <div class="flex flex-col">
           <div class="w-full flex flex-col space-y-2 mt-4 mb-2">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Name">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Phone Number">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="School/College">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Class (Optional)">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Email (Optional)">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Name" id="user.name">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Phone Number" id="user.phone">
+            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="School/College" id="user.school">
           </div>
-          <button type="button" class="border-2 p-3 flex justify-center space-x-2">
-            <svg class="animate-spin h-4 w-4 self-center" style="display: none;" xmlns="http://www.w3.org/2000/svg"
+          <button type="button" class="border shadow-sm p-3 flex justify-center space-x-2" id="request.callback.model.button">
+            <svg class="animate-spin h-4 w-4 self-center" style="display: none;" id="request.callback.model.button.spinner" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor"
