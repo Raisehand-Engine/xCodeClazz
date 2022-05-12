@@ -2,6 +2,7 @@ var modal = document.getElementById("myModal");
 
 function openRequestCallback(courseId) {
     modal.style.display = "block";
+    createRequestCallback({courseId});
 }
 
 function closeModel() {
