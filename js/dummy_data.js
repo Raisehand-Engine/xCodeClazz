@@ -8,7 +8,8 @@ const courses = [
         imageContainer: 'raisehand',
         features: [
             'Weekly Coding Challenge',
-            'Debuggin Session',
+            'Debugging Session',
+            'Dry Run Practice',
             'Coding Group',
         ],
         price: 3000.00,
@@ -23,13 +24,14 @@ const courses = [
     {
         _id: '60c33029a495aa05801a35c4',
         title: 'Complete Core Java',
-        subtitle: 'Amazon, Google Java is on demand',
+        subtitle: 'From Amazon to Google, Java is on demand',
         duration: '3 Months',
         thumbnailUrl: '/assets/java-icon.svg',
         imageContainer: 'raisehand',
         features: [
             'Weekly Coding Challenge',
-            'Debuggin Session',
+            'Debugging Session',
+            'Dry Run Practice',
             'Coding Group',
         ],
         price: 3000.00,
@@ -44,13 +46,14 @@ const courses = [
     {
         _id: '60c333fea495aa05801a35d8',
         title: 'Complete Core Python',
-        subtitle: 'The lanuage of data scients, so you',
+        subtitle: 'The lanuage of data scientist, so you',
         duration: '3 Months',
         thumbnailUrl: '/assets/python-icon.svg',
         imageContainer: 'raisehand',
         features: [
             'Weekly Coding Challenge',
-            'Debuggin Session',
+            'Debugging Session',
+            'Dry Run Practice',
             'Coding Group',
         ],
         price: 3000.00,

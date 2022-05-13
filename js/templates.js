@@ -13,11 +13,15 @@ function singleCourseDesign(course) {
             </div>
             <img src="${course.thumbnailUrl}" alt="${course.thumbnailUrl}" class="max-h-44 h-72">
             <h3 class="text-2xl font-light">${course.title}</h3>
-            <h4 class="font-light text-slate-500 text-4xl">₹${course.price}/-</h4>
-            <ul class="list-none list-inside text-center">
+            <p class="font-extralight text-slate-400">• ${course.subtitle} •</p>
+            <h4 class="font-light text-slate-500 text-4xl">₹${number_format(course.price)}/-</h4>
+            <ul class="list-none list-inside text-center"
                 ${course.features.map(e => `<li>${e}</li>`).join('')}
             </ul>
-            <button class="border px-4 py-2 bg-black text-white rounded-md" ${!course.hasActive ? 'disabled': ''} onclick="${course.hasActive ? `openRequestCallback('course', '${course._id}')` : `showSnackbar('Please dont hack me!')`}">Request Callback</button>
+            <div class="">
+                <button class="border px-4 py-2 bg-black text-white rounded-md" ${!course.hasActive ? 'disabled' : ''} onclick="${course.hasActive ? `openRequestCallback('course', '${course._id}')` : `showSnackbar('Please dont hack me!')`}">Request Callback</button>
+                <button class="border px-4 py-2 bg-logoColor text-white rounded-md" onclick="showSnackbar('Scope Under Development')">Scope</button>
+            </div>
         </div>
     `;
 }

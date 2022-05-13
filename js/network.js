@@ -63,6 +63,7 @@ function listenRequestCallbackButton() {
             resetModelState();
             closeModel();
         }).catch((err) => {
+            showSnackbar(res?.message || 'Requested Failed');
             network_states.isSomethingAlreadyRequest = false;
             hideModelLoadingSpinner();
             resetModelState();
