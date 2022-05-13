@@ -11,13 +11,13 @@ function singleCourseDesign(course) {
                     <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
             </div>
-            <img src="${course.thumbnailUrl}" alt="${course.thumbnailUrl}" height="150" width="150">
+            <img src="${course.thumbnailUrl}" alt="${course.thumbnailUrl}" class="max-h-44 h-72">
             <h3 class="text-2xl font-light">${course.title}</h3>
             <h4 class="font-light text-slate-500 text-4xl">₹${course.price}/-</h4>
             <ul class="list-none list-inside text-center">
                 ${course.features.map(e => `<li>${e}</li>`).join('')}
             </ul>
-            <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback('course', ${course._id})">Request Callback</button>
+            <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback('course', '${course._id}')">Request Callback</button>
         </div>
     `;
 }

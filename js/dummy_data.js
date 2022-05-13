@@ -1,6 +1,6 @@
 const courses = [
     {
-        _id: '1',
+        _id: '60be2160f6239b55f4d97151',
         title: 'Complete Core C++',
         subtitle: 'Unless the power of robots',
         duration: '3 Months',
@@ -21,7 +21,7 @@ const courses = [
         }
     },
     {
-        _id: '2',
+        _id: '60c33029a495aa05801a35c4',
         title: 'Complete Core Java',
         subtitle: 'Amazon, Google Java is on demand',
         duration: '3 Months',
@@ -42,7 +42,7 @@ const courses = [
         }
     },
     {
-        _id: '3',
+        _id: '60c333fea495aa05801a35d8',
         title: 'Complete Core Python',
         subtitle: 'The lanuage of data scients, so you',
         duration: '3 Months',
