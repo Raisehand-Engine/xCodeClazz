@@ -2,7 +2,7 @@ function singleCourseDesign(course) {
     return `
         <div class="relative border rounded-md shadow-lg px-2 py-5 flex flex-col items-center space-y-5">
             <div class="bg-slate-100 absolute border px-3 py-1 top-2 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
-                <p>Batch ${course.session.starts} - ${course.session.ends}</p>
+                <p>Batch ${course.session.starts} - ${course.session.ends} • ${course.duration}</p>
             </div>
             <div class="flex flex-row items-center space-x-2 bg-slate-100 absolute border px-3 py-1 top-6 left-0 rounded-tr-md rounded-br-md border-l-2 border-l-black">
                 <p>${course.spaceLeft}/${course.spaceFull} Full</p>
@@ -17,7 +17,7 @@ function singleCourseDesign(course) {
             <ul class="list-none list-inside text-center">
                 ${course.features.map(e => `<li>${e}</li>`).join('')}
             </ul>
-            <button class="border px-4 py-2 bg-black text-white rounded-md" onclick="openRequestCallback('course', '${course._id}')">Request Callback</button>
+            <button class="border px-4 py-2 bg-black text-white rounded-md" ${!course.hasActive ? 'disabled': ''} onclick="${course.hasActive ? `openRequestCallback('course', '${course._id}')` : `showSnackbar('Please dont hack me!')`}">Request Callback</button>
         </div>
     `;
 }
