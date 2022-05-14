@@ -1,4 +1,9 @@
-const host = `http://127.0.0.1:3002/sandbox/v1/api/xcodeclazz`;
+const server = {
+    sandbox: `https://raisehand.software/sandbox`,
+    live: `https://raisehand.software`
+}
+
+const host = (isLive() ? server.sandbox : `http://127.0.0.1:3002/sandbox`) + `/v1/api/xcodeclazz`;
 const routes = {
     GET_STATUS_STUDENTS: `${host}/status/students`,
     GET_STATUS_COURSES: `${host}/status/courses`,
@@ -30,8 +35,6 @@ function loadCourses() {
         const courses_container = document.getElementById('courses_container');
         courses_container.innerHTML = documents.courses.map(singleCourseDesign).join('');
     }).catch(console.log);
-    const courses_container = document.getElementById('courses_container');
-    courses_container.innerHTML = courses.map(singleCourseDesign).join('');
 }
 
 // send thanku message, or something cool "we'll learn this together!"
@@ -43,6 +46,10 @@ function listenRequestCallbackButton() {
         const name = document.getElementById('user.name').value;
         const phone = document.getElementById('user.phone').value;
         const school = document.getElementById('user.school').value;
+
+        document.getElementById('user.name').value = '';
+        document.getElementById('user.phone').value = '';
+        document.getElementById('user.school').value = '';
 
         if (network_states.isSomethingAlreadyRequest) return;
 

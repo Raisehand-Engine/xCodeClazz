@@ -74,3 +74,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     }
     return s.join(dec);
 }
+
+function isLive() {
+    const currentHost = window.location.href;
+    return !(currentHost.includes('127.0.0.1') || currentHost.includes('localhost'));
+}
