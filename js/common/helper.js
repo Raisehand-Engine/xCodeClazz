@@ -79,3 +79,18 @@ function isLive() {
     const currentHost = window.location.href;
     return !(currentHost.includes('127.0.0.1') || currentHost.includes('localhost'));
 }
+
+// https://flaviocopes.com/urlsearchparams/
+function getUrlParam(param) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(param);
+}
+
+// https://flaviocopes.com/urlsearchparams/
+function hasUrlParam(param) {
+    return getUrlParam(param) != null;
+}
+
+function getHost() {
+    return location.host;
+}

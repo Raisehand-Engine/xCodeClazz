@@ -114,7 +114,7 @@
     </div>
 
     <div id="myModal" class="modal">
-      <div class="modal-content relative flex flex-col rounded-md justify-center sm:w-1/4">
+      <div class="modal-content relative flex flex-col rounded-md justify-center sm:w-2/4 md:w-2/4 lg:w-1/4 xl:w-1/4">
         <span class="close absolute top-0 right-0 p-2 cursor-pointer" onclick="closeModel()">&times;</span>
         <h3 class="text-2xl font-bold text-center">We need your details</h3>
         <div class="flex flex-col">
@@ -143,10 +143,13 @@
   </div>
   <div id="snackbar">This will be replace automatically..</div>
 
-  <script src="/js/helper.js"></script>
-  <script src="/js/templates.js"></script>
-  <script src="/js/model.js"></script>
-  <script src="/js/network.js"></script>
+  <script src="/js/common/helper.js"></script>
+  <script src="/js/common/network.js"></script>
+  <script src="/js/common/backbone.js"></script>
+
+  <script src="/js/index/templates.js"></script>
+  <script src="/js/index/model.js"></script>
+  <script src="/js/index/backbone.js"></script>
 </body>
 
 </html>

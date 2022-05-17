@@ -18,9 +18,9 @@ function singleCourseDesign(course) {
             <ul class="list-none list-inside text-center"
                 ${course.features.map(e => `<li>${e}</li>`).join('')}
             </ul>
-            <div class="">
+            <div>
                 <button class="border px-4 py-2 bg-black text-white rounded-md" ${!course.hasActive ? 'disabled' : ''} onclick="${course.hasActive ? `openRequestCallback('course', '${course._id}')` : `showSnackbar('Please dont hack me!')`}">Request Callback</button>
-                <button class="border px-4 py-2 bg-logoColor text-white rounded-md" onclick="showSnackbar('Scope Under Development')">Scope</button>
+                <a class="border px-4 py-2 bg-logoColor text-white rounded-md" href="/scope.html?courseId=${course._id}" >Scope</a>
             </div>
         </div>
     `;
