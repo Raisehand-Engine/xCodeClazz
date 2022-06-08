@@ -89,6 +89,7 @@
             lineWrapping: true,
             foldGutter: true,
             theme: 'monokai',
+            spellcheck: false,
             // theme: "night",
             // direction: "rtl",
             extraKeys: {
@@ -101,6 +102,12 @@
             },
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
             extraKeys: { "Ctrl-Space": "autocomplete" }
+        });
+        instance.on('change', function(cm, change){
+            console.log(cm.getValue())
+        });
+        instance.on('scroll', function(cm) {
+            // cm.execCommand('selectAll')
         });
     </script>
 
