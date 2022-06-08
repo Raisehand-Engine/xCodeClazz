@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta name="author" content="Gourav Gupta">
+    <meta name="keywords" content="Programming Class, Software Development, Learning">
+    <meta name="description"
+        content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain" />
+
+    <meta itemprop="name" content="Project">
+    <meta itemprop="image" content="/assets/favicon.ico">
+    <meta itemprop="description"
+        content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="xCodeClazz">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="www.xcodeclazz.com">
+    <meta property="og:title" content="xCodeClazz - Best Coding Class | Gamharia | Jamshedpur">
+    <meta property="og:image" content="www.xcodeclazz.com/favicon.ico">
+    <meta property="og:description"
+        content="xCodeClazz - A offline clazz room for students to learn hands on programming from an expert in software domain">
+    <meta property="og:site_name" content="xCodeClazz">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <title>xCodeClazz | Editor Area</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"> </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lightblue: '#F6F9FC', // stripe bg
+                        logoColor: '#EAB308', // our brand logo color
+                        buttonColor: '#000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css" />
+    <link rel="stylesheet" href="/styles/style.css">
+    <style>
+        .CodeMirror {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col">
+    <div class="bg-black w-screen h-12 text-white px-3 flex justify-between items-center sticky">
+        <h4 class="text-3xl font-semibold"><strong class="text-logoColor">x</strong>CodeClazz</h4>
+        <button class="border border-2 border-logoColor text-logoColor px-3">
+            Fire
+        </button>
+    </div>
+    <div id="editor" class="h-screen">
+        <!-- code editor -->
+    </div>
+    <script>
+        const instance = CodeMirror(document.querySelector('#editor'), {
+            value: '# © xCodeClazz 2021 - 2022\n# Write your code here... \n\n\n',
+            mode: { name: "python", globalVars: true },
+            lineNumbers: true,
+            tabSize: 2,
+            autoCloseBrackets: true,
+            styleSelectedText: true,
+            highlightSelectionMatches: { showToken: /\w/, annotateScrollbar: true },
+            autoCloseTags: true,
+            matchBrackets: true,
+            styleActiveLine: true,
+            lineWrapping: true,
+            foldGutter: true,
+            theme: 'monokai',
+            // theme: "night",
+            // direction: "rtl",
+            extraKeys: {
+                "F11": function (cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
+                "Esc": function (cm) {
+                    if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+                }
+            },
+            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+            extraKeys: { "Ctrl-Space": "autocomplete" }
+        });
+    </script>
+
+    <script src="/js/common/helper.js"></script>
+    <script src="/js/common/network.js"></script>
+    <script src="/js/common/backbone.js"></script>
+
+    <script src="/js/editor/backbone.js"></script>
+</body>
+
+</html>
