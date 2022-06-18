@@ -7,6 +7,12 @@ function loadCourses() {
     }).catch(console.log);
 }
 
+fetch('https://xcodeclazz.herokuapp.com/app', {
+    method: 'GET',
+}).then(response => response.json()).then((document) => {
+    console.log(document);
+}).catch(console.log);
+
 // send thanku message, or something cool "we'll learn this together!"
 function listenRequestCallbackButton() {
     document.getElementById('request.callback.model.button').addEventListener('click', (e) => {
