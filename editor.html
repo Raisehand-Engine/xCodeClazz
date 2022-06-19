@@ -23,7 +23,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="www.xcodeclazz.com">
-    <meta property="og:title" content="xCodeClazz - Best Coding Class | Gamharia | Jamshedpur">
+    <meta property="og:title" content="xCodeClazz - Best Coding Class | Programming Class | Java Class | Python Class | Gamharia | Jamshedpur">
     <meta property="og:image" content="www.xcodeclazz.com/favicon.ico">
     <meta property="og:description"
         content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain">
@@ -60,57 +60,19 @@
     <style>
         .CodeMirror {
             height: 100%;
+            width: 100%;
         }
     </style>
 </head>
 
 <body class="flex flex-col">
-    <div class="bg-black w-screen h-12 text-white px-3 flex justify-between items-center sticky">
+    <div class="bg-black h-12 text-white px-3 flex justify-between items-center sticky top-0">
         <h4 class="text-3xl font-semibold"><strong class="text-logoColor">x</strong>CodeClazz</h4>
-        <button class="border border-2 border-logoColor text-logoColor px-3">
+        <button class="border border-2 border-logoColor text-logoColor px-3" id="cta-fire-btn">
             Fire
         </button>
     </div>
-    <div id="editor" class="h-screen">
-        <!-- code editor -->
-    </div>
-    <script>
-        const instance = CodeMirror(document.querySelector('#editor'), {
-            value: '# © xCodeClazz 2021 - 2022\n# Write your code here... \n\n\n',
-            mode: { name: "python", globalVars: true },
-            lineNumbers: true,
-            tabSize: 2,
-            autoCloseBrackets: true,
-            styleSelectedText: true,
-            highlightSelectionMatches: { showToken: /\w/, annotateScrollbar: true },
-            autoCloseTags: true,
-            matchBrackets: true,
-            styleActiveLine: true,
-            lineWrapping: true,
-            foldGutter: true,
-            theme: 'monokai',
-            spellcheck: false,
-            // theme: "night",
-            // direction: "rtl",
-            extraKeys: {
-                "F11": function (cm) {
-                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
-                },
-                "Esc": function (cm) {
-                    if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
-                }
-            },
-            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
-            extraKeys: { "Ctrl-Space": "autocomplete" }
-        });
-        instance.on('change', function(cm, change){
-            console.log(cm.getValue())
-        });
-        instance.on('scroll', function(cm) {
-            // cm.execCommand('selectAll')
-        });
-    </script>
-
+    <div id="editor" class="h-screen"><!-- code editor --></div>
     <script src="/js/common/helper.js"></script>
     <script src="/js/common/network.js"></script>
     <script src="/js/common/backbone.js"></script>
