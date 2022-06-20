@@ -1,0 +1,1 @@
+surge teardown xcodeclazz.com && surge teardown xcodeclazz.surge.sh && exit
