@@ -1,9 +1,9 @@
 const server = {
-    sandbox: `https://raisehand.software/sandbox`,
-    live: `https://raisehand.software`
+    sandbox: `https://xcodeclazz.herokuapp.com`,
+    live: `https://xcodeclazz.herokuapp.com`
 }
 
-const host = (isLive() ? server.sandbox : `http://127.0.0.1:3002/sandbox`) + `/v1/api/xcodeclazz`;
+const host = (isLive() ? server.sandbox : `http://127.0.0.1:3002`) + `/v1/api/xcodeclazz`;
 const routes = {
     GET_STATUS_STUDENTS: `${host}/status/students`,
     GET_STATUS_COURSES: `${host}/status/courses`,
