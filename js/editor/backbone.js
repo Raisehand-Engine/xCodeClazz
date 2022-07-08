@@ -2,10 +2,14 @@ function ctas() {
     var fire_btn = document.getElementById('cta-fire-btn');
     fire_btn.addEventListener('click', (e) => {
         e.preventDefault();
-        fetch('https://xcodeclazz.herokuapp.com/app', {
-            method: 'GET',
+        fetch('https://xcodeclazz.herokuapp.com/v1/api/compiler/python', {
+            method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify({
+                "code": "print(\"Hello, World\")"
+            })
         }).then(response => response.json()).then((document) => {
-            console.log(document);
+            console.log(document.result);
         }).catch(console.log);
     });
 }
