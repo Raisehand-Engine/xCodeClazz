@@ -21,7 +21,7 @@ function singleCourseDesign(course) {
             <div class="flex justify-center items-center">
                 <button class="border px-4 py-2 bg-black text-white" ${!course.hasActive ? 'disabled' : ''} onclick="${course.hasActive ? `openRequestCallback('course', '${course._id}')` : `showSnackbar('Please dont hack me!')`}">Request</button>
                 <a class="border px-4 py-2 bg-logoColor text-white" href="/scope.html?courseId=${course._id}" >Scope</a>
-                <a class="border px-4 py-2 text-white ${!course.hasActive ? 'disabled' : ''}" href="/editor.html?lang=${'python'}" ><img src="/assets/code-editor-logo.svg" alt="/assets/code-editor-logo.svg" class="h-6 w-6"></a>
+                <a class="border px-4 py-2 text-white ${!course.hasActive ? 'disabled' : ''}" href="/editor.html?lang=${course.keywords}" ><img src="/assets/code-editor-logo.svg" alt="/assets/code-editor-logo.svg" class="h-6 w-6"></a>
             </div>
         </div>
     `;
