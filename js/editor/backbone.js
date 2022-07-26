@@ -1,3 +1,5 @@
+var code = "";
+
 function ctas() {
     var fire_btn = document.getElementById('cta-fire-btn');
     fire_btn.addEventListener('click', (e) => {
@@ -6,10 +8,10 @@ function ctas() {
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify({
-                "code": "print(\"Hello, World\")"
+                "code": `${code}`
             })
         }).then(response => response.json()).then((document) => {
-            console.log(document.result);
+            openConsoleOutput(document.result);
         }).catch(console.log);
     });
 }
@@ -44,7 +46,7 @@ function initCodeMirror() {
         extraKeys: { "Ctrl-Space": "autocomplete" }
     });
     instance.on('change', function (cm, change) {
-        console.log(cm.getValue())
+        code = cm.getValue()
     });
     instance.on('scroll', function (cm) {
         // cm.execCommand('selectAll')
