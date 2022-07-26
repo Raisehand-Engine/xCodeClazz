@@ -2,212 +2,116 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+    <meta name="author" content="Gourav Gupta">
+    <meta name="keywords"
+        content="Programming Class, Software Development, Learning, xcodeclass xcodeclazz xcode clazz clazz">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- <meta name="google-site-verification" content=""> -->
 
-  <meta name="author" content="Gourav Gupta">
-  <meta name="keywords" content="Programming Class, Software Development, Learning, xcodeclass xcodeclazz xcode clazz clazz">
-  <meta name="format-detection" content="telephone=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <!-- <meta name="google-site-verification" content=""> -->
+    <meta name="description"
+        content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain" />
 
-  <meta name="description"
-    content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain" />
+    <meta itemprop="name" content="Project">
+    <meta itemprop="image" content="/favicon.ico">
+    <meta itemprop="description"
+        content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain">
 
-  <meta itemprop="name" content="Project">
-  <meta itemprop="image" content="/assets/favicon.ico">
-  <meta itemprop="description"
-    content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="xCodeClazz">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="xCodeClazz">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://xcodeclazz.com">
+    <meta property="og:title"
+        content="xCodeClazz - Best Coding Class | Java Class Jamshedpur | Java Programming | Python Language Class | Gamharia | Jamshedpur">
+    <meta property="og:image" content="http://xcodeclazz.com/favicon.ico">
+    <meta property="og:description"
+        content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain">
+    <meta property="og:site_name" content="xCodeClazz - Programming language class in gamharia jamshedpur">
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://xcodeclazz.com">
-  <meta property="og:title"
-    content="xCodeClazz - Best Coding Class | Java Class Jamshedpur | Java Programming | Python Language Class | Gamharia | Jamshedpur">
-  <meta property="og:image" content="http://xcodeclazz.com/favicon.ico">
-  <meta property="og:description"
-    content="xCodeClazz - An offline clazz room for students to learn hands on programming from an expert in software domain">
-  <meta property="og:site_name" content="xCodeClazz - Programming language class in gamharia jamshedpur">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>xCodeClazz - Best Coding Class | Programming Class | Java Class | Python Class | Gamharia | Jamshedpur
+    </title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <title>xCodeClazz - Best Coding Class | Programming Class | Java Class | Python Class | Gamharia | Jamshedpur</title>
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            lightblue: '#F6F9FC', // stripe bg
-            logoColor: '#EAB308', // our brand logo color
-            buttonColor: '#000',
-          }
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script> -->
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" /> -->
+    <!-- <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"
+        crossorigin="anonymous"></script> -->
+    <!-- <script
+        src=”https://cdnjs.cloudflare.com/ajax/libs/react/18.0.0-rc.2-next-2bf7c02f0-20220314/cjs/react-jsx-dev-runtime.production.min.js”
+        integrity=”sha512-2dbLjJG+LUX3BS82pzXpQEVXHukNjWFkD6rYjJt675TdOFRbh+mkPqeEKZAtH/Ded+FWLv3z4pmLP6queUWLIQ==”
+        crossorigin=”anonymous” referrerpolicy=”no-referrer”></script>
+    <script
+        src=”https://cdnjs.cloudflare.com/ajax/libs/react/18.0.0-rc.2-next-2bf7c02f0-20220314/umd/react.profiling.min.js”
+        integrity=”sha512-/URNroZqh13SGW/RmRyEFuetaq42N5YQ1RFtocUrwqVd5PW8RoCwS8jDAGJ+iMiFoXsIi5PgTNT7VTGrj9a2kQ==”
+        crossorigin=”anonymous” referrerpolicy=”no-referrer”></script> -->
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <style>
+        .CodeMirror {
+            height: 100%;
+            width: 100%;
         }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="/styles/style.css">
+
+        textarea {
+            resize: none !important;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lightblue: '#F6F9FC', // stripe bg
+                        logoColor: '#EAB308', // our brand logo color
+                        buttonColor: '#000',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-  <div class="h-screen overflow-y-auto overflow-x-hidden">
-    <div class="w-full bg-white z-10 shadow shadow-sm h-14 sticky top-0">
-      <div class="flex overflow-hidden">
-        <div class="flex-none flex-col self-center p-2">
-          <a href="/">
-            <img src="/assets/logo192.png" alt="brand logo" width="32" height="32">
-          </a>
-        </div>
-        <p class="flex-auto h-14 flex flex-row justify-center items-center text-2xl font-extralight -ml-12">
-          xCodeClazz
-        </p>
-      </div>
-    </div>
-    <div class="p-5">
+    <div id="root"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+    <!-- Common Functions -->
+    <script src="./js/common/init.js"></script>
+    <script src="./js/common/backbone.js"></script>
+    <script src="./js/common/helper.js"></script>
+    <script src="./js/common/network.js"></script>
 
-        <!-- first half -->
-        <div class="hidden sm:hidden md:hidden lg:flex flex-col justify-center items-center">
-          <img src="/assets/logo512.png" alt="brand logo" width="200" height="200">
-        </div>
+    <!-- Components -->
+    <script src="./js/components/home/index.js" type="text/babel"></script>
+    <script src="./js/components/editor/index.js" type="text/babel"></script>
+    <script src="./js/components/course/index.js" type="text/babel"></script>
 
-        <!-- second half -->
-        <div class="flex flex-col justify-center p-2 md:p-6 lg:p-10">
-
-          <h1 class="text-5xl">
-            Hi, Folks
-          </h1>
-          <p class="mt-4 text-2xl font-extralight leading-9 md:leading-loose">
-            Programming is not just writing bunch of code on the screen,
-            it's an <strong>ART</strong> very few people master. Why don't you learn
-            to program from a self taught artist. Learn from us we'll teach you every
-            concept in depth & that too with ease explanation. <b>Let's Code</b>
-
-            <!-- You're probably want to learn coding! great. In fact you should as soon as possible. You know what this is
-            one
-            of the most valuable skills now days. so what next?
-            Learn from us! at least we are the best at this if not great. -->
-          </p>
-          <blockquote class="mt-10 leading-tight border-l-8 border-l-logoColor pl-4">
-            Gourav Gupta
-            <br />
-            <small class="text-slate-400">Lead Programmer & Founder <strong>xCodeClazz</strong></small>
-          </blockquote>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="mt-10 bg-gray-100 px-5 py-10 shadow-inner text-center flex flex-col space-y-5">
-      <h3 class="text-3xl font-semibold tracking-widest">OFFLINE COURSES</h3>
-      <p class="font-extralight text-md">
-        The interactive learning for school/college students.
-      </p>
-    </div>
-
-    <div class="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-      id="courses_container">
-      <!-- Your single course cars will render here -->
-    </div>
-
-    <div class="mt-10 bg-gray-100 px-5 py-10 shadow-inner text-center flex flex-col space-y-5">
-      <h3 class="text-3xl font-semibold tracking-widest">BENIFITS</h3>
-      <p class="font-extralight text-md">What else you should expect from us.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-
-      <div class="p-5 flex flex-col items-center space-y-5 text-center">
-        <img src="/assets/certificate-logo.png" alt="/assets/certificate-logo.png" class="h-18 w-20">
-        <h4 class="text-3xl font-semibold">Certificate</h4>
-        <p class="font-extralight text-lg">Receive a Certificate of Completion the moment you complete the course.</p>
-      </div>
-
-      <div class="p-5 flex flex-col items-center space-y-5 text-center">
-        <img src="/assets/code-editor-logo.png" alt="/assets/code-editor-logo.png" class="h-18 w-20">
-        <h4 class="text-3xl font-semibold">xCodeClazz IDE</h4>
-        <p class="font-extralight text-lg">Our own ready to use coding playground editor for all your code.</p>
-      </div>
-
-      <div class="p-5 flex flex-col items-center space-y-5 text-center">
-        <img src="/assets/wireless-logo.png" alt="/assets/wireless-logo.png" class="h-18 w-20">
-        <h4 class="text-3xl font-semibold">Wifi Clazzroom</h4>
-        <p class="font-extralight text-lg">We let you access our wifi network for fast coding execution.</p>
-      </div>
-
-      <div class="p-5 flex flex-col items-center space-y-5 text-center">
-        <img src="/assets/chat-logo.png" alt="/assets/chat-logo.png" class="h-18 w-20">
-        <h4 class="text-3xl font-semibold">Code Sharing</h4>
-        <p class="font-extralight text-lg">We encourage code sharing because sharing knowledge or helping others helps you to perform better, and become stronger as professionals.</p>
-      </div>
-
-      <div class="p-5 flex flex-col items-center space-y-5 text-center">
-        <img src="/assets/critical-thinking-logo.png" alt="/assets/critical-thinking-logo.png" class="h-18 w-20">
-        <h4 class="text-3xl font-semibold">Critical Thinking</h4>
-        <p class="font-extralight text-lg">Programming is all about thinking what to do and how to do. You will spend
-          your 90% thinking on how to solve given problem. You will be taught how to think like programmer</p>
-      </div>
-
-    </div>
-
-    <div class="p-5 flex flex-col items-center space-y-3 bg-black text-white text-center">
-      <h4 class="text-3xl font-semibold"><strong class="text-logoColor">x</strong>CodeClazz</h4>
-      <p class="font-extralight text-md">www.xcodeclazz.com</p>
-      <p class="font-extralight text-md">+91 89878 62422, 657 3566208</p>
-      <p class="font-extralight text-sm">Dara Variety Store next to Gupta Book Store, Gamharia, Jamshedpur, Jharkhand -
-        832108</p>
-    </div>
-
-    <div id="myModal" class="modal">
-      <div class="modal-content relative flex flex-col rounded-md justify-center sm:w-2/4 md:w-2/4 lg:w-1/4 xl:w-1/4">
-        <span class="close absolute top-0 right-0 p-2 cursor-pointer" onclick="closeModel()">&times;</span>
-        <h3 class="text-2xl font-bold text-center">We need your details</h3>
-        <div class="flex flex-col">
-          <div class="w-full flex flex-col space-y-2 mt-4 mb-2">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Name" id="user.name">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="Phone Number"
-              id="user.phone">
-            <input class="rounded-sm focus:border-black border-black" type="text" placeholder="School/College"
-              id="user.school">
-          </div>
-          <button type="button" class="border shadow-sm p-3 flex justify-center space-x-2"
-            id="request.callback.model.button">
-            <svg class="animate-spin h-4 w-4 self-center" style="display: none;"
-              id="request.callback.model.button.spinner" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24">
-              <circle class="opacity-25" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-              </path>
-            </svg>
-            <strong>Request Callback</strong>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="snackbar">This will be replace automatically..</div>
-
-  <script src="/js/common/helper.js"></script>
-  <script src="/js/common/network.js"></script>
-  <script src="/js/common/backbone.js"></script>
-
-  <script src="/js/index/templates.js"></script>
-  <script src="/js/index/model.js"></script>
-  <script src="/js/index/backbone.js"></script>
+    <!-- Entry Point -->
+    <script src="./main.js" type="text/babel"></script>
 </body>
 
 </html>
