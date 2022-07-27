@@ -9,6 +9,7 @@ const App = () => {
         // <Provider store={createStoreWithMiddleware(rootReducer)}>
         <HashRouter>
             <Route path="/" exact component={HomeLayout} />
+            <Route path="/conf" exact component={Conference} />
             <Route path="/editor" exact component={EditorLayout} />
             <Route path="/course" exact component={SingleCourse} />
         </HashRouter>
