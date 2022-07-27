@@ -60,7 +60,12 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"> </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/ayu-dark.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css" />
+
+    <!-- https://codemirror.net/5/mode/ -->
+    <script src="https://codemirror.net/5/mode/python/python.js"></script>
+    <script src="https://codemirror.net/5/mode/clike/clike.js"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -68,6 +73,7 @@
         .CodeMirror {
             height: 100%;
             width: 100%;
+            font-size: 2rem;
         }
 
         textarea {
@@ -94,6 +100,7 @@
     <div id="root"></div>
 
     <!-- Common Functions -->
+    <script src="./js/common/db.js"></script>
     <script src="./js/common/init.js"></script>
     <script src="./js/common/backbone.js"></script>
     <script src="./js/common/helper.js"></script>

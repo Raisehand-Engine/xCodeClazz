@@ -3,8 +3,11 @@ class EditorLayout extends React.Component {
     constructor(props) {
         super(props);
 
+        this.db = new DB();
+        // '# © xCodeClazz 2021 - 2022\n# Write your code here... \n\n\n'
+
         this.editorRef = React.createRef();
-        this.state = { code: 'hello world', outputModel: {}, waitForCode: false }
+        this.state = { code: this.db.getPythonCode(), outputModel: {}, waitForCode: false }
     };
 
     closeModel = () => this.setState({ outputModel: {} });
@@ -16,7 +19,7 @@ class EditorLayout extends React.Component {
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify({
-                "code": `${this.state.code}`
+                "code": this.state.code
             })
         }).then(response => response.json()).then((document) => {
             this.setState({ waitForCode: false });
@@ -26,10 +29,15 @@ class EditorLayout extends React.Component {
 
     createEditor = () => {
         const instance = CodeMirror(this.editorRef.current, {
-            value: '# © xCodeClazz 2021 - 2022\n# Write your code here... \n\n\n',
-            mode: { name: "python", globalVars: true },
+            value: this.state.code,
+            mode: {
+                name: "python",
+                version: 3,
+                singleLineStringErrors: false
+            },
+            indentUnit: 4,
             lineNumbers: true,
-            tabSize: 2,
+            tabSize: 4,
             autoCloseBrackets: true,
             styleSelectedText: true,
             highlightSelectionMatches: { showToken: /\w/, annotateScrollbar: true },
@@ -38,10 +46,8 @@ class EditorLayout extends React.Component {
             styleActiveLine: true,
             lineWrapping: true,
             foldGutter: true,
-            theme: 'monokai',
+            theme: 'ayu-dark',
             spellcheck: false,
-            // theme: "night",
-            // direction: "rtl",
             extraKeys: {
                 "F11": function (cm) {
                     cm.setOption("fullScreen", !cm.getOption("fullScreen"));
@@ -57,10 +63,19 @@ class EditorLayout extends React.Component {
         instance.on('scroll', this.onEditorScrollChange);
     }
 
-    onEditorTextChange = (cm, change) => this.setState({ code: cm.getValue() });
+    onEditorTextChange = (cm, change) => {
+        this.setState({ code: cm.getValue() });
+        this.db.savePythonCode(cm.getValue());
+    }
     onEditorScrollChange = (cm) => { };
 
-    componentDidMount() { this.createEditor(); };
+    componentDidMount() {
+        this.createEditor();
+        document.addEventListener('keyup', e => {
+            if (e.key == 'Escape') { this.closeModel(); }
+            if (e.ctrlKey && e.key == 'b') { this.runCode(); }
+        }, false);
+    };
 
     render() {
         return (
@@ -71,7 +86,6 @@ class EditorLayout extends React.Component {
                         <Spinner show={this.state.waitForCode} />Run
                     </button>
                 </div>
-                <div ref={this.editorRef} className="h-screen"></div>
                 <div className={`modal ${Object.keys(this.state.outputModel).length > 0 ? 'block' : 'hidden'}`}>
                     <div className="modal-content relative flex flex-col rounded-md justify-center sm:w-2/4 md:w-2/4 lg:w-1/4 xl:w-1/4">
                         <span className="close absolute top-0 right-0 p-2 cursor-pointer" onClick={() => this.closeModel()}>&times;</span>
@@ -81,6 +95,7 @@ class EditorLayout extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div ref={this.editorRef} className="h-screen"></div>
             </div>
         )
     }
