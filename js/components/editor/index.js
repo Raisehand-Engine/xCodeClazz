@@ -4,7 +4,6 @@ class EditorLayout extends React.Component {
         super(props);
 
         this.db = new DB();
-        // '# © xCodeClazz 2021 - 2022\n# Write your code here... \n\n\n'
 
         this.editorRef = React.createRef();
         this.state = { code: this.db.getPythonCode(), outputModel: {}, waitForCode: false }
@@ -29,7 +28,7 @@ class EditorLayout extends React.Component {
 
     createEditor = () => {
         const instance = CodeMirror(this.editorRef.current, {
-            value: this.state.code,
+            value: this.state.code || '# © xCodeClazz 2021 - 2022\n# Write your code here... \n\n\n',
             mode: {
                 name: "python",
                 version: 3,
