@@ -4,13 +4,14 @@ class EditorLayout extends React.Component {
         super(props);
 
         this.editorRef = React.createRef();
-        this.state = { code: 'hello world', outputModel: {} }
+        this.state = { code: 'hello world', outputModel: {}, waitForCode: false }
     };
 
     closeModel = () => this.setState({ outputModel: {} });
     openModel = (output) => this.setState({ outputModel: output });
 
     runCode = () => {
+        this.setState({ waitForCode: true });
         fetch('https://xcodeclazz.herokuapp.com/v1/api/compiler/python', {
             method: 'POST',
             mode: 'cors',
@@ -18,8 +19,8 @@ class EditorLayout extends React.Component {
                 "code": `${this.state.code}`
             })
         }).then(response => response.json()).then((document) => {
+            this.setState({ waitForCode: false });
             this.openModel(document.result);
-            console.log(document.result);
         }).catch(console.log);
     }
 
@@ -66,7 +67,9 @@ class EditorLayout extends React.Component {
             <div className="flex flex-col">
                 <div className="bg-black h-12 text-white px-3 flex justify-between items-center sticky top-0">
                     <h4 className="text-3xl font-semibold"><strong className="text-logoColor">x</strong>CodeClazz</h4>
-                    <button className="border border-2 border-logoColor text-logoColor px-3" onClick={() => this.runCode()}>Fire</button>
+                    <button className="border border-2 border-logoColor text-logoColor px-3 flex flex-row px-2 py-1" onClick={() => this.runCode()}>
+                        <Spinner show={this.state.waitForCode} />Run
+                    </button>
                 </div>
                 <div ref={this.editorRef} className="h-screen"></div>
                 <div className={`modal ${Object.keys(this.state.outputModel).length > 0 ? 'block' : 'hidden'}`}>
