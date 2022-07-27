@@ -1,0 +1,1 @@
+const TYPE_DEMO = 'TYPE_DEMO';
