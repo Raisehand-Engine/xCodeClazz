@@ -122,6 +122,7 @@ const HomeLayout = () => {
                                 <small className="text-slate-400">Lead Programmer &amp; Founder <strong>xCodeClazz</strong></small>
                             </blockquote>
 
+                            <Link to="/conf" className="mt-4 border-2 border-logoColor px-4 py-2 w-min bg-black text-white">Conference</Link>
                         </div>
 
                     </div>
@@ -135,6 +136,7 @@ const HomeLayout = () => {
                     </p>
                 </div>
 
+                <div className="flex flex-row justify-center"><Spinner show={courses.length == 0} /></div>
                 <div className="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     {courses.map(singleCourseDesign)}
                 </div>
@@ -156,6 +158,12 @@ const HomeLayout = () => {
                         <img src="/assets/code-editor-logo.png" alt="/assets/code-editor-logo.png" className="h-18 w-20" />
                         <h4 className="text-3xl font-semibold">xCodeClazz IDE</h4>
                         <p className="font-extralight text-lg">Our own ready to use coding playground editor for all your code.</p>
+                    </div>
+
+                    <div className="p-5 flex flex-col items-center space-y-5 text-center">
+                        <img src="/assets/video-conference.png" alt="/assets/video-conference.png" className="h-18 w-20" />
+                        <h4 className="text-3xl font-semibold">Video Conference</h4>
+                        <p className="font-extralight text-lg">We also encourage student to ask question on the air if needed.</p>
                     </div>
 
                     <div className="p-5 flex flex-col items-center space-y-5 text-center">
@@ -205,7 +213,6 @@ const HomeLayout = () => {
                     </div>
                 </div>
             </div>
-            <div id="snackbar">This will be replace automatically..</div>
         </div>
     )
 }

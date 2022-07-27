@@ -1,5 +1,5 @@
 const server = {
-    sandbox: `https://xcodeclazz.herokuapp.com`,
+    sandbox: `http://localhost:3000`,
     live: `https://xcodeclazz.herokuapp.com`
 }
 
@@ -24,6 +24,8 @@ const routes = {
     POST_COURSE_CREATE: `${host}/course/create`,
     POST_COURSE_UPDATE: `${host}/course/update`,
     POST_COURSE_DELETE: `${host}/course/delete`,
+    POST_CONF: `${host}/conf`,
+    GET_CONF: `${host}/conf`,
 };
 
 const network_states = {
