@@ -7,6 +7,40 @@ const HomeLayout = () => {
 
     useEffect(() => loadCourses(), []);
     // useEffect(() => console.log(callbackRequestModel), [callbackRequestModel]);
+    useEffect(() => {
+        let params = (new URL(document.location)).searchParams;
+        let code = params.get("code");
+        // check if the user has code param on the browser
+        if (code) {
+            axios({
+                method: 'post',
+                url: 'https://oauth2.googleapis.com/token',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', },
+                data: `code=${code}&client_id=${clientID}&client_secret=${clientSecret}&redirect_uri=${encodeURIComponent(redirect_url)}&grant_type=authorization_code`,
+            }).then(first => {
+                const access_token = first.data.access_token;
+                const token_type = first.data.token_type;
+                const expires_in = first.data.expires_in;
+                const id_token = first.data.id_token;
+                const scope = first.data.scope;
+
+                axios({
+                    method: 'get',
+                    url: 'https://www.googleapis.com/oauth2/v2/userinfo',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': `${token_type} ${access_token}` },
+                }).then(second => {
+                    console.log(second.data);
+                    // window.location = 'https://www.xcodeclazz.com'
+                });
+            }).catch(console.error);
+        }
+    });
+
+    const login = () => {
+        const scope = "https://www.googleapis.com/auth/userinfo.profile";
+        const url = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${encodeURIComponent(redirect_url)}&prompt=consent&response_type=code&client_id=${clientID}&scope=${encodeURIComponent(scope)}&access_type=online`;
+        window.open(url, '_self');
+    }
 
     const showFormButtonSpinner = () => setSpinner(true);
     const hideFormButtonSpinner = () => setSpinner(false);
@@ -98,20 +132,15 @@ const HomeLayout = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
 
-                        {/* first half */}
-                        <div className="hidden sm:hidden md:hidden lg:flex flex-col justify-center items-center">
-                            <img src="/assets/logo512.png" alt="brand logo" width="200" height="200" />
-                        </div>
-
                         {/* second half */}
                         <div className="flex flex-col justify-center p-2 md:p-6 lg:p-10">
 
-                            <h1 className="text-5xl">
-                                Hi, Folks
+                            <h1 className="text-4xl">
+                                Hola, Genius
                             </h1>
-                            <p className="mt-4 text-2xl font-extralight leading-9 md:leading-loose">
+                            <p className="mt-4 text-2xl font-extralight leading-9 md:leading-normal text-gray-400">
                                 Programming is not just writing bunch of code on the screen,
-                                it's an <strong>ART</strong> very few people master. Why don't you learn
+                                It's an <strong>ART</strong> very few people master. Why don't you learn
                                 to program from a self taught artist. Learn from us we'll teach you every
                                 concept in depth &amp; that too with ease explanation. <b>Let's Code</b>
                                 {/* You're probably want to learn coding! great. In fact you should as soon as possible. You know what this is one of the most valuable skills now days. so what next? Learn from us! at least we are the best at this if not great. */}
@@ -122,7 +151,74 @@ const HomeLayout = () => {
                                 <small className="text-slate-400">Lead Programmer &amp; Founder <strong>xCodeClazz</strong></small>
                             </blockquote>
 
-                            <Link to="/conf" className="mt-4 border-2 border-logoColor px-4 py-2 w-min bg-black text-white">Conferences</Link>
+                            <div className="flex flex-row space-x-1 mt-8">
+                                {/* <button className="border-2 border-logoColor px-4 py-2 w-min bg-black text-white flex flex-row items-center" onClick={e => login()}>
+                                    <Spinner show={false} />
+                                    Login
+                                </button> */}
+                                {/* <Link to="/dashboard" className="border-2 border-logoColor px-4 py-2 w-min bg-black text-white">Dashboard</Link> */}
+                                <Link to="/conf" className="border-2 border-logoColor px-4 py-2 w-min bg-black text-white flex flex-row items-center">
+                                    <Spinner show={false} />
+                                    Conferences
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* first half */}
+                        <div className="hidden sm:hidden md:hidden lg:flex flex-col justify-center items-center space-y-2">
+                            {/* <img src="/assets/logo512.png" alt="brand logo" width="200" height="200" /> */}
+
+                            <h2 className="text-xl font-bold">Leaderboard</h2>
+                            <hr />
+                            <div className="w-72 h-72 shadow-xl rounded-lg overflow-hidden">
+                                <ul className="space-y-1 overflow-y-auto h-full">
+                                    <li className="w-full h-14 cursor-pointer hover:bg-gray-100">
+                                        <div className="w-full h-full flex flex-row items-center p-4 space-x-3">
+                                            <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
+                                            <div className="flex flex-col">
+                                                <h4 className="text-lg font-semibold">Gaurav Gupta</h4>
+                                                <small className="text-xs text-gray-400">Vani Vidya Mandir • <strong>Python</strong></small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li className="w-full h-14 cursor-pointer hover:bg-gray-100">
+                                        <div className="w-full h-full flex flex-row items-center p-4 space-x-3">
+                                            <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
+                                            <div className="flex flex-col">
+                                                <h4 className="text-lg font-semibold">Satyam Gorai</h4>
+                                                <small className="text-xs text-gray-400">Xavier Gamharia • <strong>Java</strong></small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li className="w-full h-14 cursor-pointer hover:bg-gray-100">
+                                        <div className="w-full h-full flex flex-row items-center p-4 space-x-3">
+                                            <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
+                                            <div className="flex flex-col">
+                                                <h4 className="text-lg font-semibold">Vikas Pradhan</h4>
+                                                <small className="text-xs text-gray-400">Xavier Gamharia • <strong>C++</strong></small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li className="w-full h-14 cursor-pointer hover:bg-gray-100">
+                                        <div className="w-full h-full flex flex-row items-center p-4 space-x-3">
+                                            <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
+                                            <div className="flex flex-col">
+                                                <h4 className="text-lg font-semibold">Aditya Roy</h4>
+                                                <small className="text-xs text-gray-400">KPS Gamharia • <strong>Python</strong></small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className="w-full h-2">
+                                        <div className="w-full h-full flex flex-row items-center p-4 space-x-3">
+                                            <h4 className="text-xs font-semibold text-slate-600">* and 99 Other(s) on the leaderboard.</h4>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
 
                     </div>
@@ -136,10 +232,17 @@ const HomeLayout = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-row justify-center"><Spinner show={courses.length == 0} /></div>
-                <div className="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                    {courses.map(singleCourseDesign)}
-                </div>
+                {
+                    courses.length > 0 ? (
+                        <div className="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                            {courses.map(singleCourseDesign)}
+                        </div>
+                    ) : (
+                        <div className="p-5">
+                            <div className="flex flex-row items-center justify-center"><Spinner show={courses.length == 0} /></div>
+                        </div>
+                    )
+                }
 
                 <div className="mt-10 bg-gray-100 px-5 py-10 shadow-inner text-center flex flex-col space-y-5">
                     <h3 className="text-3xl font-semibold tracking-widest">BENIFITS</h3>

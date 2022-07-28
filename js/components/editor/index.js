@@ -81,7 +81,7 @@ class EditorLayout extends React.Component {
             <div className="flex flex-col">
                 <div className="bg-black h-12 text-white px-3 flex justify-between items-center sticky top-0">
                     <h4 className="text-3xl font-semibold"><strong className="text-logoColor">x</strong>CodeClazz</h4>
-                    <button className="border border-2 border-logoColor text-logoColor px-3 flex flex-row px-2 py-1" onClick={() => this.runCode()}>
+                    <button className="border border-2 border-logoColor text-logoColor px-3 flex flex-row px-2 py-1 items-center" onClick={() => this.runCode()}>
                         <Spinner show={this.state.waitForCode} />Run
                     </button>
                 </div>

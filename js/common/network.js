@@ -2,9 +2,9 @@ const server = {
     sandbox: `http://localhost:3000`,
     live: `https://xcodeclazz.herokuapp.com`
 }
-
 const localhost = server.sandbox // `http://127.0.0.1:3002`
 
+const redirect_url = (isLive() ? 'https://www.xcodeclazz.com' : 'http://localhost:5500/');
 const host = (isLive() ? server.live : server.sandbox) + `/v1/api/xcodeclazz`;
 const routes = {
     GET_STATUS_STUDENTS: `${host}/status/students`,

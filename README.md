@@ -11,3 +11,6 @@ surge --help
 # CNAME * na-west1.surge.sh
 # CNAME www  na-west1.surge.sh
 ```
+
+secret/
+-   g_oauth.json -> { web: {...} }
