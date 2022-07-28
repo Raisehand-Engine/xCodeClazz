@@ -8,7 +8,7 @@ class Conference extends React.Component {
             course: this.defaultCourse,
             href: '',
             passphrase: '',
-            nodes: [{ course: 'Sql', link: 'https://meet.google.com/xbt-qmsr-gjr' }]
+            nodes: [],
         }
     };
 
@@ -36,13 +36,19 @@ class Conference extends React.Component {
 
     loadConfs = () => {
         fetch(routes.GET_CONF, { method: 'GET', }).then(response => response.json()).then((res) => {
-            console.log(res)
+            this.setState({ nodes: res.documents });
         }).catch(showSnackbar);
     }
 
     getLinks = (node) => {
         return (
-            <li><a target="_blank" className="font-bold" href={node.link}>&times; {node.course}</a></li>
+            <li className="flex flex-row justify-between items-center">
+                <a target="_blank" className={`${node.active ? 'font-bold' : 'font-light'} text-lg w-full hover:text-logoColor`} href={node.href}>{node.course}</a>
+                <span class={`flex h-3 w-3 ${node.active ? 'block' : 'hidden'}`}>
+                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-logoColor opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-logoColor"></span>
+                </span>
+            </li>
         )
     }
 
@@ -54,7 +60,7 @@ class Conference extends React.Component {
         return (
             <div className="p-4 h-screen flex flex-col md:flex-row md:space-x-4 items-center justify-center">
                 <div className="w-72 h-72 shadow-xl rounded-lg shadow-xl flex flex-col p-5 space-y-2">
-                    <h4 className="font-bold"><strong className="text-logoColor animate-pulse">x</strong>Live</h4>
+                    <h2 className="font-bold text-2xl"><strong className="text-logoColor animate-pulse">x</strong>Live</h2>
                     <hr />
                     <ul>{this.state.nodes.map(e => this.getLinks(e))}</ul>
                     <hr />

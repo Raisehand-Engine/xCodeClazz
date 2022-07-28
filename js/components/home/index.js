@@ -122,7 +122,7 @@ const HomeLayout = () => {
                                 <small className="text-slate-400">Lead Programmer &amp; Founder <strong>xCodeClazz</strong></small>
                             </blockquote>
 
-                            <Link to="/conf" className="mt-4 border-2 border-logoColor px-4 py-2 w-min bg-black text-white">Conference</Link>
+                            <Link to="/conf" className="mt-4 border-2 border-logoColor px-4 py-2 w-min bg-black text-white">Conferences</Link>
                         </div>
 
                     </div>
