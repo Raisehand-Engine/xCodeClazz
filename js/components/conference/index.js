@@ -40,13 +40,32 @@ class Conference extends React.Component {
         }).catch(showSnackbar);
     }
 
+    removeLink = (node) => {
+        if (node.course == '') return;
+        if (this.state.passphrase == '') return;
+
+        network_states.isSomethingAlreadyRequest = true;
+        fetch(routes.DELETE_CONF, {
+            method: 'DELETE',
+            mode: 'cors',
+            body: JSON.stringify({ course: node.course, passphrase: this.state.passphrase })
+        }).then(response => response.json()).then((res) => {
+            network_states.isSomethingAlreadyRequest = false;
+            showSnackbar(res.message);
+            this.props.history.goBack();
+        }).catch(e => {
+            showSnackbar(e);
+            network_states.isSomethingAlreadyRequest = false;
+        });
+    }
+
     getLinks = (node) => {
         return (
             <li className="flex flex-row justify-between items-center">
                 <a target="_blank" className={`${node.active ? 'font-bold' : 'font-light'} text-lg w-full hover:text-logoColor`} href={node.href}>{node.course}</a>
-                <span class={`flex h-3 w-3 ${node.active ? 'block' : 'hidden'}`}>
-                    <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-logoColor opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-logoColor"></span>
+                <span class={`flex h-3 w-3 ${node.active ? 'block' : 'hidden'}`} onClick={e => this.removeLink(node)}>
+                    <span class={`animate-ping absolute inline-flex h-3 w-3 rounded-full bg-logoColor hover:bg-red-500 hover:cursor-pointer opacity-75`}></span>
+                    <span class={`relative inline-flex rounded-full h-3 w-3 bg-logoColor hover:bg-red-500 hover:cursor-pointer`}></span>
                 </span>
             </li>
         )

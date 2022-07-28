@@ -26,6 +26,7 @@ const routes = {
     POST_COURSE_DELETE: `${host}/course/delete`,
     POST_CONF: `${host}/conf`,
     GET_CONF: `${host}/conf`,
+    DELETE_CONF: `${host}/conf`,
 };
 
 const network_states = {
