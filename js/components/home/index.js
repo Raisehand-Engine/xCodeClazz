@@ -177,7 +177,7 @@ const HomeLayout = () => {
                                             <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
                                             <div className="flex flex-col">
                                                 <h4 className="text-lg font-semibold">Gaurav Gupta</h4>
-                                                <small className="text-xs text-gray-400">Vani Vidya Mandir • <strong>Python</strong></small>
+                                                <small className="text-xs text-gray-400">Vani Vidya Mandir • <strong>C++</strong></small>
                                             </div>
                                         </div>
                                     </li>
@@ -196,8 +196,8 @@ const HomeLayout = () => {
                                         <div className="w-full h-full flex flex-row items-center p-4 space-x-3">
                                             <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
                                             <div className="flex flex-col">
-                                                <h4 className="text-lg font-semibold">Vikas Pradhan</h4>
-                                                <small className="text-xs text-gray-400">Xavier Gamharia • <strong>C++</strong></small>
+                                                <h4 className="text-lg font-semibold">Vishal Kumar</h4>
+                                                <small className="text-xs text-gray-400">Xavier Gamharia • <strong>Java</strong></small>
                                             </div>
                                         </div>
                                     </li>
@@ -207,7 +207,7 @@ const HomeLayout = () => {
                                             <img src="https://via.placeholder.com/100x100" width="40" height="40" className="rounded-full" alt="" />
                                             <div className="flex flex-col">
                                                 <h4 className="text-lg font-semibold">Aditya Roy</h4>
-                                                <small className="text-xs text-gray-400">KPS Gamharia • <strong>Python</strong></small>
+                                                <small className="text-xs text-gray-400">Xavier Gamharia • <strong>Java</strong></small>
                                             </div>
                                         </div>
                                     </li>
