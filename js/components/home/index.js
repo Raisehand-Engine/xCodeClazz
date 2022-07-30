@@ -68,7 +68,7 @@ const HomeLayout = () => {
                 <div className="flex justify-center items-center">
                     <button className="border px-4 py-2 bg-logoColor text-white" disabled={!course.hasActive} onClick={() => course.hasActive ? openModel(course) : showSnackbar('Please dont hack me!')}>Request</button>
                     {/* <Link className="border px-4 py-2 bg-logoColor text-white" to={`/course?courseId=${course._id}`}>Scope</Link> */}
-                    <Link className="border px-4 py-2 text-white" disabled={!course.hasActive} to={`/editor?lang=${course.keywords}`} ><img src="/assets/code-editor-logo.svg" alt="/assets/code-editor-logo.svg" className="h-6 w-6" /></Link>
+                    {/* <Link className="border px-4 py-2 text-white" disabled={!course.hasActive} to={`/editor?lang=${course.keywords}`} ><img src="/assets/code-editor-logo.svg" alt="/assets/code-editor-logo.svg" className="h-6 w-6" /></Link> */}
                 </div>
             </div>
         );
