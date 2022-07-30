@@ -14,7 +14,7 @@ class EditorLayout extends React.Component {
 
     runCode = () => {
         this.setState({ waitForCode: true });
-        fetch('https://xcodeclazz.herokuapp.com/v1/api/compiler/python', {
+        fetch('https://raisehand.software/xcodeclazz/v1/api/compiler/python', {
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify({

@@ -1,6 +1,6 @@
 const server = {
-    sandbox: `http://localhost:3000`,
-    live: `https://xcodeclazz.herokuapp.com`
+    sandbox: `http://localhost:3000/xcodeclazz`,
+    live: `https://raisehand.software/xcodeclazz`
 }
 const localhost = server.sandbox // `http://127.0.0.1:3002`
 
